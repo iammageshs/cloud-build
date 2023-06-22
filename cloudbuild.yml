@@ -1,7 +1,14 @@
 steps:
 # Git checkout
-- name: 'gcr.io/cloud-builders/git'
-  args: ['checkout', 'master']
+#- name: 'gcr.io/cloud-builders/git'
+#  args: ['checkout', 'master']
+steps:
+- name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: 'bash'
+  args:
+    - '-c'
+    - |
+      git clone https://github.com/devopsguyz/ondc-test.git
 
 # Maven build
 - name: 'gcr.io/cloud-builders/gcloud'
