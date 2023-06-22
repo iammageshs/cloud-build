@@ -3,12 +3,14 @@ steps:
 #- name: 'gcr.io/cloud-builders/git'
 #  args: ['checkout', 'master']
 steps:
-- name: 'gcr.io/cloud-builders/gcloud'
+- name: 'gcr.io/cloud-builders/git'
   entrypoint: 'bash'
   args:
     - '-c'
     - |
-      git clone https://github.com/devopsguyz/ondc-test.git
+      git config --global credential.helper '!gcloud auth application-default print-access-token | git credential-gcloud.sh'
+      git clone https://iammageshs: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@github.com/iammageshs/cloud-build.git
+
 
 # Maven build
 - name: 'gcr.io/cloud-builders/gcloud'
