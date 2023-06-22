@@ -10,5 +10,5 @@ steps:
     - '-c'
     - |
       gcloud auth activate-service-account --key-file=/home/ubuntu/grafana-monitoring-demo-9af85f3c62a5.json
-      gcloud compute ssh --project=grafana-monitoring-demo --zone=asia-south1-a demo --command="ls"
+      gcloud compute ssh --project=grafana-monitoring-demo --zone=asia-south1-a demo --command="cd /home/ubuntu/build/adaptor/beckn-gateway/beckn-common"
 
